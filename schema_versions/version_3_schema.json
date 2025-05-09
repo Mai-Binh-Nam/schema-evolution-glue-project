@@ -1,0 +1,96 @@
+{
+  "schema": {
+    "type": "struct",
+    "fields": [
+      {
+        "name": "customer_id",
+        "type": "string",
+        "nullable": false,
+        "metadata": {}
+      },
+      {
+        "name": "first_name",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "last_name",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "email",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "phone",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "order_total",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "order_date",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "items_purchased",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "payment_method",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "shipping_address",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "loyalty_points",
+        "type": "integer",
+        "nullable": true,
+        "metadata": {}
+      }
+    ]
+  },
+  "version": "3.0",
+  "effective_date": "2025-04-27",
+  "description": "Added loyalty_points field and changed data types",
+  "changes": [
+    {
+      "type": "ADD_COLUMN",
+      "column": "loyalty_points",
+      "data_type": "integer"
+    },
+    {
+      "type": "CHANGE_TYPE",
+      "column": "order_total",
+      "old_type": "double",
+      "new_type": "string"
+    },
+    {
+      "type": "CHANGE_TYPE",
+      "column": "items_purchased",
+      "old_type": "integer",
+      "new_type": "string"
+    }
+  ],
+  "comments": "Schema evolution: Added loyalty program tracking and changed types to accommodate string representations"
+}

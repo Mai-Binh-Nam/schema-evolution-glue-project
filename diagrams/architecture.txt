@@ -1,0 +1,70 @@
+AWS Schema Evolution Architecture
+================================
+
++------------------+        +------------------+
+|                  |        |                  |
+|  Source Data     |------->|  S3 Input Bucket |
+|  (JSON files)    |        |                  |
+|                  |        |                  |
++------------------+        +------------------+
+                                     |
+                                     v
+                           +-----------------+
+                           |                 |
+                           |   AWS Glue Job  |<--------+
+                           |   (PySpark)     |         |
+                           |                 |         |
+                           +-----------------+         |
+                                     |                 |
+                                     v                 |
+                           +------------------+        |
+                           |                  |        |
+                           |  S3 Output Bucket|        |
+                           |  (Parquet)       |        |
+                           |                  |        |
+                           +------------------+        |
+                                     |                 |
+                                     v                 |
+                           +-----------------+         |
+                           |                 |         |
+                           |   AWS Glue     |         |
+                           |   Crawler      |         |
+                           |                 |         |
+                           +-----------------+         |
+                                     |                 |
+                                     v                 |
+                           +-----------------+         |
+                           |                 |         |
+                           |   AWS Glue      |         |
+                           |   Data Catalog  |---------+
+                           |                 |
+                           +-----------------+
+                                     |
+                                     v
+                           +-----------------+
+                           |                 |
+                           |   Amazon Athena |
+                           |   (Queries)     |
+                           |                 |
+                           +-----------------+
+
+Key Components:
+--------------
+1. Source Data: JSON files with evolving schemas
+2. S3 Input Bucket: Raw data storage 
+3. AWS Glue Job: Schema resolution using DynamicFrames
+4. S3 Output Bucket: Processed data in Parquet format
+5. AWS Glue Crawler: Detects schema changes
+6. AWS Glue Data Catalog: Central metadata repository
+7. Amazon Athena: SQL queries on processed data
+
+Schema Evolution Handling:
+------------------------
+- DynamicFrames with resolveChoice transformations
+- Schema versioning in schema_versions directory
+- Automated schema detection with Glue Crawler
+- Schema reconciliation strategies in Glue Job
+
+Note: This is a text representation of the architecture.
+For a visual diagram, you can create one using tools like
+draw.io, Lucidchart, or AWS Architecture diagrams.

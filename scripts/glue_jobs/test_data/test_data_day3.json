@@ -1,0 +1,41 @@
+[
+  {
+    "customer_id": "C007",
+    "first_name": "Amanda",
+    "last_name": "Taylor",
+    "email": "amanda.taylor@example.com",
+    "phone": "555-888-9999",
+    "order_total": "199.99",
+    "order_date": "2025-04-27",
+    "items_purchased": "6",
+    "payment_method": "credit_card",
+    "shipping_address": "101 Elm St, Anyplace, AP 13579",
+    "loyalty_points": 250
+  },
+  {
+    "customer_id": "C008",
+    "first_name": "James",
+    "last_name": "Anderson",
+    "email": "james.anderson@example.com",
+    "phone": "555-111-2222",
+    "order_total": "75.50",
+    "order_date": "2025-04-27",
+    "items_purchased": "2",
+    "payment_method": "apple_pay",
+    "shipping_address": "202 Maple Dr, Somewhere, SW 24680",
+    "loyalty_points": 125
+  },
+  {
+    "customer_id": "C009",
+    "first_name": "Emily",
+    "last_name": "Garcia",
+    "email": "emily.garcia@example.com",
+    "phone": "555-333-4444",
+    "order_total": "129.95",
+    "order_date": "2025-04-27",
+    "items_purchased": "3",
+    "payment_method": "paypal",
+    "shipping_address": "303 Cedar Ln, Nowhere, NW 97531",
+    "loyalty_points": 175
+  }
+]
